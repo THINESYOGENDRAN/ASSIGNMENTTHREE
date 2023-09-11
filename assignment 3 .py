@@ -1,10 +1,21 @@
+import opendatasets as od
 import pandas as pd
+import plotly.express as px
+
+app = dash.Dash(__name__)
+server = app.server
 
 # Provide the correct path to the CSV file as a string
-file_path = "/kaggle/input/total-number-of-prisoners-in-malaysia/Number_of_Prisoners_by_Gender_by_State_2016-2019.csv"
+kaggle_dataset_url = "https://www.kaggle.com/datasets/sitinoramirah/total-number-of-prisoners-in-malaysia"
 
-# Read the CSV file into a DataFrame
-data = pd.read_csv(file_path)
+# Download the Kaggle dataset
+od.download(kaggle_dataset_url)
+
+# Define the dataset file path
+dataset_file_path = "./total-number-of-prisoners-in-malaysia/Number_of_Prisoners_by_Gender_by_State_2016-2019.csv"
+
+# Read the CSV data into a DataFrame
+data = pd.read_csv(dataset_file_path)
 
 # Now you can work with the 'data' DataFrame as needed.
 data.head(10)
