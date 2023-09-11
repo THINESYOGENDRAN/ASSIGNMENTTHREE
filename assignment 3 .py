@@ -5,6 +5,9 @@ import plotly.express as px
 app = dash.Dash(__name__)
 server = app.server
 
+data_url ="https://github.com/THINESYOGENDRAN/ASSIGNMENTTHREE/edit/main/assignment%203%20.py"
+data = pd.read_csv(data_url)
+
 # Provide the correct path to the CSV file as a string
 kaggle_dataset_url = "https://www.kaggle.com/datasets/sitinoramirah/total-number-of-prisoners-in-malaysia"
 
